@@ -4,12 +4,12 @@ import Routes from './routes'
 import GlobalStyle from './styles/global'
 
 function App() {
-    return (
-        <BrowserRouter>
-            <Routes />
-            <GlobalStyle />
-        </BrowserRouter>
-    )
+  return (
+    <BrowserRouter>
+      <Routes />
+      <GlobalStyle />
+    </BrowserRouter>
+  )
 }
 
 export default App

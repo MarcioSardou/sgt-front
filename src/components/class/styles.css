@@ -1,0 +1,106 @@
+.wrapper-class{
+  margin-top: 100px;
+}
+
+  .wrapper-class ul{
+    margin-top: 15px;
+    display: flex;
+  }
+
+    .wrapper-class ul li {
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+
+
+      .wrapper-class ul li span{
+        width: 20px;
+        height: 20px;
+        display: block;
+        border-radius: 20px;
+        margin-right: 10px;
+      }
+
+        .wrapper-class ul li span.danger{
+          background-color: #e74c3c;
+        }
+
+        .wrapper-class ul li span.alert{
+          background-color: #f1c40f;
+        }
+
+  .next-class{
+
+  }
+    .next-class ul{
+      display: block;
+    }
+
+      .next-class > ul > li{
+        padding: 15px 20px;
+        background-color: #fff;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+      }
+        .next-class > ul > li.warning{
+          background-color: rgba(241, 196, 15, 0.95);
+        }
+
+        .next-class > ul > li.danger{
+          background-color: rgba(231, 76, 60, 0.80);
+        }
+
+
+        .next-class ul > li > .card-class{
+
+        }
+
+          .next-class ul li .card-class > ul{
+            display: flex;
+            margin-top: 0px;
+            flex-flow: row;
+            flex-wrap: wrap;
+          }
+
+            @media screen and (min-width: 992px) {
+              .next-class ul li .card-class > ul{
+                flex-wrap: nowrap;
+              }
+            }
+
+            .next-class ul li .card-class > ul > li{
+              display: block;
+              flex: 1 0 50%;
+              margin-bottom: 20px;
+            }
+
+
+              @media screen and (min-width: 992px) {
+                .next-class ul li .card-class > ul > li {
+                  flex: 1 0 15%;
+                  margin-bottom: 0px;
+                }
+
+                .next-class ul li .card-class > ul > li.grand-values {
+                  margin-right: 20px;
+                  flex: 1 0 40%;
+                }
+              }
+
+              .next-class ul li .card-class > ul > li .subtitle{
+                margin-bottom: 5px;
+              }
+                @media screen and (min-width: 992px) {
+                  .next-class ul li .card-class > ul > li .subtitle{
+                    margin-bottom: 10px;
+                  }
+                }
+
+              .next-class ul li .card-class > ul > li .value{
+                font-weight: 300;
+                padding-right: 10px;
+              }
+
+

@@ -1,7 +1,16 @@
 import React from 'react'
-
-// import { Title } from './styles'
+import 'normalize.css'
+import './styles.css'
+import Date from '../../components/date'
+import Class from '../../components/class'
 
 export default function Main() {
-    return <>{process.env.REACT_APP_TITLE}</>
+  return (
+    <>
+      <div className='wrapper'>
+        <Date />
+        <Class />
+      </div>
+    </>
+  )
 }

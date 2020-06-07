@@ -1,0 +1,17 @@
+body{
+    background-color: #f3f3f3;
+  }
+
+  .wrapper{
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 15px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+    @media screen and (min-width: 992px) {
+      wrapper {
+        padding: 50px;
+      }
+    }
