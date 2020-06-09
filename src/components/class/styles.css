@@ -13,7 +13,6 @@
       align-items: center;
     }
 
-
       .wrapper-class ul li span{
         width: 20px;
         height: 20px;
@@ -54,7 +53,7 @@
 
 
         .next-class ul > li > .card-class{
-
+          width: 100%;
         }
 
           .next-class ul li .card-class > ul{
@@ -72,20 +71,20 @@
 
             .next-class ul li .card-class > ul > li{
               display: block;
-              flex: 1 0 50%;
+              flex: 0 0 50%;
               margin-bottom: 20px;
             }
 
 
               @media screen and (min-width: 992px) {
                 .next-class ul li .card-class > ul > li {
-                  flex: 1 0 15%;
+                  flex: 0 0 10%;
                   margin-bottom: 0px;
                 }
 
                 .next-class ul li .card-class > ul > li.grand-values {
                   margin-right: 20px;
-                  flex: 1 0 40%;
+                  flex: 0 0 15%;
                 }
               }
 
