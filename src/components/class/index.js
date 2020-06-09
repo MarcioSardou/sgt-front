@@ -51,7 +51,7 @@ function Class() {
           <ul>
             {
               classes.map(classes => (
-                <li className={
+                <li key={classes.id} className={
                   classes.status === 'confirmado' ? ''
                                                   : (classes.status === 'faltou' ? 'danger' : 'warning')
                 }>
