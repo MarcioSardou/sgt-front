@@ -8,11 +8,12 @@ function Class() {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
+    let date = new Date()
 
     api
     .post('/api', {
       query: `query{
-        allClassRooms{
+        allClassRooms(date: "${date.toISOString().split('T')[0]}"){
           edges{
             node {
               id,
@@ -41,8 +42,6 @@ function Class() {
     });
 
   }, []);
-
-
 
   return (
     <>
