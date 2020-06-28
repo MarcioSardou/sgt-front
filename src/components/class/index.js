@@ -8,9 +8,10 @@ import api from '../../services/api'
 function Class() {
   const [classRoom, setClassRoom] = useState([])
 
-  api
-    .post('/api', {
-      query: `query{
+  useEffect(() => {
+    api
+      .post('/api', {
+        query: `query{
     allClassRooms{
       edges{
         node {
@@ -35,11 +36,11 @@ function Class() {
       totalCount
     }
   }`,
-    })
-    .then((res) => {
-      setClassRoom(res.data.data.allClassRooms.edges.node)
-    })
-  useEffect(() => {}, [])
+      })
+      .then((res) => {
+        setClassRoom(res.data.data.allClassRooms.edges.node)
+      })
+  }, [])
 
   return (
     <>
