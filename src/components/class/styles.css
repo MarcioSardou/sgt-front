@@ -2,6 +2,12 @@
   margin-top: 100px;
 }
 
+  .wrap-date-legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
   .wrapper-class ul{
     margin-top: 15px;
     display: flex;
