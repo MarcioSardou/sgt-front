@@ -1,35 +1,13 @@
-.header {
-    padding: 20px;
-    width: 200px;
-    height: 200px;
+
+.week-day {
     background-color: #0cb4ce;
-    margin: 0px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    margin-top: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: auto;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    max-width: 160px;
   }
-
-    .header .box-day h2, p, small {
-      text-align: center;
-      color: #fff;
-      text-transform: capitalize;
-    }
-
-    .header .box-day h2{
-      font-size: 80px;
-      font-weight: 900;
-    }
-
-    .header .box-day p{
-      font-size: 23px;
-      font-weight: 500;
-    }
-
-    .header .box-day small{
-      font-size: 16px;
-      font-weight: 300;
-      margin-top: 8px;
-      display: block;
-    }
