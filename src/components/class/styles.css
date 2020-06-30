@@ -4,9 +4,20 @@
 
   .wrap-date-legend {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 992px) {
+    .wrap-date-legend {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+    }
   }
+
+
 
   .wrapper-class ul{
     margin-top: 15px;

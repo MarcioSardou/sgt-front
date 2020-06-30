@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import './styles.css'
 import Legends from '../legends'
-import Date from '../date'
+import WeekDay from '../day'
 import api from '../../services/api'
 
 function Class() {
@@ -25,7 +25,7 @@ function Class() {
             id,
             nome
           },
-          data,
+          dias_semana
           status,
           turno,
           turma,
@@ -46,11 +46,19 @@ function Class() {
     <>
       <div className='wrapper-class'>
         <div className='wrap-date-legend'>
-          <Date />
+          <WeekDay />
           <Legends />
         </div>
         <div className='next-class'>
           <ul>
+            <div className='mae'>
+              <div className='filho'>Codigo</div>
+              <div className='filho'>Disciplina</div>
+              <div className='filho'>Professor</div>
+              <div className='filho'>Sala</div>
+              <div className='filho'>Horário</div>
+            </div>
+
             {classRoom.map((item) => (
               <li
                 key={item.id}
