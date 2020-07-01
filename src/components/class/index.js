@@ -9,33 +9,43 @@ function Class() {
   const [classRoom, setClassRoom] = useState([])
 
   useEffect(() => {
+
+    let dateWeek = new Date().getDay()
+    let days = {
+      0:'segunda-feira',
+      1:'terca-feira',
+      2:'quarta-feira',
+      3:'quinta-feira',
+      4:'sexta-feira'
+    }
+
     api
       .post('/api', {
         query: `query{
-    allClassRooms{
-      edges{
-        node {
-          id,
-          disciplina{
-            id,
-            nome,
-            codigo
-          },
-          professor{
-            id,
-            nome
-          },
-          dias_semana
-          status,
-          turno,
-          turma,
-          sala,
-          horario
-        }
-      }
-      totalCount
-    }
-  }`,
+          allClassRooms(weekday: '${days[dateWeek]}'){
+            edges{
+              node {
+                id,
+                disciplina{
+                  id,
+                  nome,
+                  codigo
+                },
+                professor{
+                  id,
+                  nome
+                },
+                dias_semana
+                status,
+                turno,
+                turma,
+                sala,
+                horario
+              }
+            }
+            totalCount
+          }
+        }`,
       })
       .then((res) => {
         setClassRoom(res.data.data.allClassRooms.edges.node)
