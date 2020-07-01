@@ -5,17 +5,18 @@ import Legends from '../legends'
 import WeekDay from '../day'
 import api from '../../services/api'
 
-function callToApi(){
-  let dateWeek = new Date().getDay()
-  let days = {
-    1:'segunda-feira',
-    2:'terca-feira',
-    3:'quarta-feira',
-    4:'quinta-feira',
-    5:'sexta-feira'
+function callToApi() {
+  const dateWeek = new Date().getDay()
+  const days = {
+    1: 'segunda-feira',
+    2: 'terca-feira',
+    3: 'quarta-feira',
+    4: 'quinta-feira',
+    5: 'sexta-feira',
   }
-  return api.post('/api', {
-    query: `query{
+  return api
+    .post('/api', {
+      query: `query{
       allClassRooms(weekday: "${days[dateWeek]}"){
         edges{
           node {
@@ -39,21 +40,19 @@ function callToApi(){
         totalCount
       }
     }`,
-  })
-  .then((res) => res.data.data.allClassRooms.edges.node )
+    })
+    .then((res) => res.data.data.allClassRooms.edges.node)
 }
 
 function Class() {
   const [classRoom, setClassRoom] = useState([])
 
   useEffect(() => {
-
     callToApi().then((res) => setClassRoom(res))
 
     setInterval(() => {
       callToApi().then((res) => setClassRoom(res))
-    }, 5 * 60 * 1000);
-
+    }, 5 * 60 * 1000)
   }, [])
 
   return (
@@ -65,14 +64,13 @@ function Class() {
         </div>
         <div className='next-class'>
           <ul>
-            <div className='mae'>
-              <div className='filho'>Codigo</div>
-              <div className='filho'>Disciplina</div>
-              <div className='filho'>Professor</div>
-              <div className='filho'>Sala</div>
-              <div className='filho'>Horário</div>
-            </div>
-
+            <li className='desk-title'>
+              <div className='subtitle'>CÓDIGO</div>
+              <div className='subtitle'>DISCIPLINA</div>
+              <div className='subtitle'>PROFESSOR</div>
+              <div className='subtitle'>SALA</div>
+              <div className='subtitle'>HORÁRIO</div>
+            </li>
             {classRoom.map((item) => (
               <li
                 key={item.id}

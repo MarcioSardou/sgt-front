@@ -110,6 +110,7 @@
               }
                 @media screen and (min-width: 992px) {
                   .next-class ul li .card-class > ul > li .subtitle{
+                    display: none;
                     margin-bottom: 10px;
                   }
                 }
@@ -119,4 +120,29 @@
                 padding-right: 10px;
               }
 
+              .next-class ul .desk-title {
+               display: none;
+              }
 
+              @media screen and (min-width: 992px) {
+                .next-class ul .desk-title {
+                  display: flex;
+                  padding: 15px 20px;
+                  margin-bottom: 15px;
+                  border-radius: 5px;
+                  border: 1px;
+                }
+              }
+
+
+              .next-class ul .desk-title .subtitle {
+                width: 100%;
+                display: block;
+                flex: 0 0 10%;
+                margin-bottom: 20px;
+              }
+                .next-class ul .desk-title div:nth-child(2),
+                .next-class ul .desk-title div:nth-child(3) {
+                margin-right: 20px;
+                flex: 0 0 20% ;
+                }
