@@ -5,51 +5,55 @@ import Legends from '../legends'
 import WeekDay from '../day'
 import api from '../../services/api'
 
+function callToApi(){
+  let dateWeek = new Date().getDay()
+  let days = {
+    1:'segunda-feira',
+    2:'terca-feira',
+    3:'quarta-feira',
+    4:'quinta-feira',
+    5:'sexta-feira'
+  }
+  return api.post('/api', {
+    query: `query{
+      allClassRooms(weekday: "${days[dateWeek]}"){
+        edges{
+          node {
+            id,
+            disciplina{
+              id,
+              nome,
+              codigo
+            },
+            professor{
+              id,
+              nome
+            },
+            status,
+            turno,
+            turma,
+            sala,
+            horario
+          }
+        }
+        totalCount
+      }
+    }`,
+  })
+  .then((res) => res.data.data.allClassRooms.edges.node )
+}
+
 function Class() {
   const [classRoom, setClassRoom] = useState([])
 
   useEffect(() => {
 
-    let dateWeek = new Date().getDay()
-    let days = {
-      0:'segunda-feira',
-      1:'terca-feira',
-      2:'quarta-feira',
-      3:'quinta-feira',
-      4:'sexta-feira'
-    }
+    callToApi().then((res) => setClassRoom(res))
 
-    api
-      .post('/api', {
-        query: `query{
-          allClassRooms(weekday: '${days[dateWeek]}'){
-            edges{
-              node {
-                id,
-                disciplina{
-                  id,
-                  nome,
-                  codigo
-                },
-                professor{
-                  id,
-                  nome
-                },
-                dias_semana
-                status,
-                turno,
-                turma,
-                sala,
-                horario
-              }
-            }
-            totalCount
-          }
-        }`,
-      })
-      .then((res) => {
-        setClassRoom(res.data.data.allClassRooms.edges.node)
-      })
+    setInterval(() => {
+      callToApi().then((res) => setClassRoom(res))
+    }, 5 * 60 * 1000);
+
   }, [])
 
   return (
