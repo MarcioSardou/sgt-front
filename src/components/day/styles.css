@@ -1,29 +1,14 @@
 
 .week-day {
-    background-color: #0cb4ce;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    width: auto;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #fff;
-    max-width: 200px;
-    margin-bottom: 20px
-  }
-
-  @media screen and (min-width: 992px) {
-    .week-day {
-      background-color: #0cb4ce;
-      padding: 5px;
-      border-radius: 5px;
-      font-size: 14px;
-      width: auto;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: #fff;
-      max-width: 160px;
-    }
-  }
+  background-color: #0cb4ce;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  width: auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  max-width: 200px;
+  margin-bottom: 16px;
+}
