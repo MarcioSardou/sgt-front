@@ -5,8 +5,7 @@ import Legends from '../legends'
 import WeekDay from '../day'
 import api from '../../services/api'
 
-function callToApi() {
-  const dateWeek = new Date().getDay()
+function callToApi(dateWeek) {
   const days = {
     1: 'segunda-feira',
     2: 'terca-feira',
@@ -48,11 +47,17 @@ function Class() {
   const [classRoom, setClassRoom] = useState([])
 
   useEffect(() => {
-    callToApi().then((res) => setClassRoom(res))
 
-    setInterval(() => {
-      callToApi().then((res) => setClassRoom(res))
-    }, 5 * 60 * 1000)
+    const dateWeek = new Date().getDay()
+
+    if(dateWeek !== 0 && dateWeek !== 6){
+      callToApi(dateWeek).then((res) => setClassRoom(res))
+
+      setInterval(() => {
+        callToApi(dateWeek).then((res) => setClassRoom(res))
+      }, 5 * 60 * 1000)
+    }
+
   }, [])
 
   return (
